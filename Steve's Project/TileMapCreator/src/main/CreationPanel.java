@@ -3,15 +3,18 @@ package main;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import states.StateManager;
 
-public class CreationPanel extends JPanel implements Runnable, MouseListener{
+public class CreationPanel extends JPanel implements Runnable, KeyListener, MouseListener{
 	
 	public final static int WIDTH = 800;
 	public final static int HEIGHT = 600;
@@ -38,6 +41,8 @@ public class CreationPanel extends JPanel implements Runnable, MouseListener{
 		super.addNotify();
 		if(thread == null){
 			thread = new Thread(this);
+			addKeyListener(this);
+			addMouseListener(this);
 			thread.start();
 		}
 	}
@@ -104,8 +109,20 @@ public class CreationPanel extends JPanel implements Runnable, MouseListener{
 
 	public void mouseExited(MouseEvent e) {}
 
-	public void mousePressed(MouseEvent e) {}
+	public void mousePressed(MouseEvent e) {		
+		sm.mousePressed(e.getX(), e.getY(), SwingUtilities.isLeftMouseButton(e), SwingUtilities.isRightMouseButton(e));		
+	}
 
 	public void mouseReleased(MouseEvent e) {}
+
+	public void keyPressed(KeyEvent e) {
+		
+		
+		
+	}
+
+	public void keyReleased(KeyEvent e) {}
+
+	public void keyTyped(KeyEvent e) {}
 	
 }

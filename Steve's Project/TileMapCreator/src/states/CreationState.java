@@ -33,9 +33,10 @@ public class CreationState extends State{
 	}
 	public void keyPressed(int key) {}
 	public void keyReleased(int key) {}
-	public void mousePressed(int x, int y) {
+	public void mousePressed(int x, int y, boolean leftclick, boolean rightclick) {
 		
-		
+		if (leftclick)
+			System.out.println("x: " + x + " y:" + y);
 		
 	}
 

@@ -12,7 +12,7 @@ public abstract class State {
 	public abstract void init();
 	public abstract void update();
 	public abstract void draw(Graphics2D g);
-	public abstract void mousePressed(int x, int y);
+	public abstract void mousePressed(int x, int y, boolean leftclick, boolean rightclick);
 	public abstract void keyPressed(int key);
 	public abstract void keyReleased(int key);
 	public void drawStringToCenter(String s, Graphics2D g){

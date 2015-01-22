@@ -29,6 +29,6 @@ public class StateManager {
 	public void init(){ states.get(currentState).init(); }
 	public void update(){ states.get(currentState).update(); }	
 	public void draw(Graphics2D g){	states.get(currentState).draw(g); }
-	public void mousePressed(int x, int y){ states.get(currentState).mousePressed(x, y); }
+	public void mousePressed(int x, int y, boolean leftclick, boolean rightclick){ states.get(currentState).mousePressed(x, y, leftclick, rightclick); }
 	
 }

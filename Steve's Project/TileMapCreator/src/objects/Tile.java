@@ -12,6 +12,7 @@ public class Tile extends Polygon{
 	public Tile(int x, int y, int tileSize){
 		
 		this.tileSize = tileSize;
+		this.textID = 0;
 		
 		this.x = x;
 		this.y = y;
@@ -29,12 +30,24 @@ public class Tile extends Polygon{
 		
 		g.setColor(Color.BLACK);
 		g.drawPolygon(this);
-		g.drawString(textID+"", x, y);
+		g.drawString(textID+"", x, y+tileSize/10);
 		
 	}
 	
 	public void setPassable(boolean passable){
 		this.passable = passable;
+	}
+	
+	public void setTextID(int textID){
+		this.textID = textID;
+	}
+	
+	public boolean getPassable(){
+		return passable;
+	}
+	
+	public int setTextID(){
+		return textID;
 	}
 	
 	

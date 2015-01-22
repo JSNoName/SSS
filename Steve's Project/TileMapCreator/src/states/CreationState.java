@@ -36,7 +36,11 @@ public class CreationState extends State{
 	public void mousePressed(int x, int y, boolean leftclick, boolean rightclick) {
 		
 		if (leftclick)
-			System.out.println("x: " + x + " y:" + y);
+			maptiles.tiles[x/tileSize][y/tileSize].incrementTextID();
+			//System.out.println("x: " + x + " y:" + y);
+		
+		if (rightclick)
+			maptiles.tiles[x/tileSize][y/tileSize].setPassable(!maptiles.tiles[x/tileSize][y/tileSize].getPassable());
 		
 	}
 

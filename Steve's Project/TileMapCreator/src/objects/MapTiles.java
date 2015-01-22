@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 
 public class MapTiles {
 	
-	private Tile[][] tiles;
+	public Tile[][] tiles;
 	private int width, height, tileSize;
 	
 	public MapTiles(int width, int height, int tileSize){
